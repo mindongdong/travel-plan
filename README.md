@@ -61,7 +61,7 @@
 
 ## 📅 상세 일정표
 
-여행 일정의 상세한 시간표는 [여행 스케줄](./gongjiam_travel_schedule.html)에서 확인하실 수 있습니다.
+여행 일정의 상세한 시간표는 [여행 스케줄](https://mindongdong.github.io/travel-plan/gongjiam_travel_schedule.html)에서 확인하실 수 있습니다.
 
 ## 💡 여행 팁
 
