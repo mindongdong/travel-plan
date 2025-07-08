@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>곤지암 2박 3일 여행 일정표</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #ff6b6b, #feca57);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        .day-section {
+            margin-bottom: 40px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+        
+        .day-header {
+            padding: 20px 30px;
+            color: white;
+            font-weight: 600;
+            font-size: 1.3em;
+        }
+        
+        .day1 .day-header {
+            background: linear-gradient(135deg, #74b9ff, #0984e3);
+        }
+        
+        .day2 .day-header {
+            background: linear-gradient(135deg, #55efc4, #00b894);
+        }
+        
+        .day3 .day-header {
+            background: linear-gradient(135deg, #fd79a8, #e84393);
+        }
+        
+        .day-content {
+            background: white;
+            padding: 30px;
+        }
+        
+        .activity {
+            margin-bottom: 25px;
+            padding: 20px;
+            border-left: 4px solid #ddd;
+            background: #f8f9fa;
+            border-radius: 0 10px 10px 0;
+        }
+        
+        .day1 .activity {
+            border-left-color: #74b9ff;
+        }
+        
+        .day2 .activity {
+            border-left-color: #55efc4;
+        }
+        
+        .day3 .activity {
+            border-left-color: #fd79a8;
+        }
+        
+        .activity-title {
+            font-size: 1.1em;
+            font-weight: 600;
+            color: #2d3436;
+            margin-bottom: 10px;
+        }
+        
+        .activity-desc {
+            color: #636e72;
+            line-height: 1.6;
+        }
+        
+        .time-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .time-table th {
+            background: linear-gradient(135deg, #6c5ce7, #a29bfe);
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        .time-table td {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+            vertical-align: top;
+        }
+        
+        .time-table tr:hover {
+            background: #f8f9fa;
+        }
+        
+        .time-col {
+            background: #f1f2f6;
+            font-weight: 500;
+            color: #2d3436;
+            width: 130px;
+        }
+        
+        .location-col {
+            font-weight: 600;
+            color: #2d3436;
+            width: 200px;
+        }
+        
+        .summary-section {
+            background: linear-gradient(135deg, #ffecd2, #fcb69f);
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .summary-title {
+            font-size: 1.4em;
+            font-weight: 600;
+            color: #2d3436;
+            margin-bottom: 15px;
+        }
+        
+        .summary-item {
+            background: white;
+            padding: 12px 20px;
+            border-radius: 25px;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .tips-section {
+            background: linear-gradient(135deg, #a8edea, #fed6e3);
+            padding: 30px;
+            border-radius: 15px;
+        }
+        
+        .tips-title {
+            font-size: 1.4em;
+            font-weight: 600;
+            color: #2d3436;
+            margin-bottom: 15px;
+        }
+        
+        .tip-item {
+            background: white;
+            padding: 15px 20px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            border-left: 4px solid #00cec9;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .highlight {
+            background: linear-gradient(135deg, #ffeaa7, #fab1a0);
+            padding: 3px 8px;
+            border-radius: 5px;
+            font-weight: 600;
+            color: #2d3436;
+        }
+        
+        .icon {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🏔️ 곤지암 2박 3일 여행 🏔️</h1>
+            <p>2025년 7월 11일 ~ 13일 | 6인 기준</p>
+        </div>
+        
+        <div class="content">
+            <!-- Day 1 -->
+            <div class="day-section day1">
+                <div class="day-header">
+                    📅 7월 11일 (금) - 첫째 날
+                </div>
+                <div class="day-content">
+                    <div class="activity">
+                        <div class="activity-title">🏠 숙소 체크인 및 장보기</div>
+                        <div class="activity-desc">
+                            • 곤지암역 인근 에어비엔비 체크인<br>
+                            • 주변 마트에서 장보기<br>
+                            • 숙소에서 저녁 식사 준비 및 식사
+                        </div>
+                    </div>
+                    <div class="activity">
+                        <div class="activity-title">🎮 숙소 내 게임 & 자유 시간</div>
+                        <div class="activity-desc">
+                            • 보드게임, 스위치, 메이플 등<br>
+                            • 편안한 휴식 시간
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Day 2 -->
+            <div class="day-section day2">
+                <div class="day-header">
+                    📅 7월 12일 (토) - 둘째 날
+                </div>
+                <div class="day-content">
+                    <div class="activity">
+                        <div class="activity-title">🌲 화담숲 & 곤지암 루지 360</div>
+                        <div class="activity-desc">하루 종일 자연과 액티비티를 즐기는 날</div>
+                    </div>
+                    
+                    <table class="time-table">
+                        <thead>
+                            <tr>
+                                <th>시간대</th>
+                                <th>장소/활동</th>
+                                <th>설명 및 특징</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="time-col">09:30~10:00</td>
+                                <td class="location-col">화담숲 이동 및 입장</td>
+                                <td>사전 예약 필수, 주차장 혼잡 주의</td>
+                            </tr>
+                            <tr>
+                                <td class="time-col">10:00~12:30</td>
+                                <td class="location-col"><span class="highlight">화담숲 산책 및 체험</span></td>
+                                <td>자작나무숲, 이끼원, 계절별 테마정원, 스탬프 챌린지 등</td>
+                            </tr>
+                            <tr>
+                                <td class="time-col">12:30~13:30</td>
+                                <td class="location-col">점심: 화담숲 인근 식당</td>
+                                <td>산채비빔밥, 해물파전 등 지역 맛집</td>
+                            </tr>
+                            <tr>
+                                <td class="time-col">14:00~15:30</td>
+                                <td class="location-col"><span class="highlight">곤지암 루지 360</span></td>
+                                <td>1.9km 트랙 단체 레이싱, 포토존, 곤돌라 하늘공원 연계</td>
+                            </tr>
+                            <tr>
+                                <td class="time-col">16:00~17:00</td>
+                                <td class="location-col">카페: 라꾸에스타, LOFT 1010 등</td>
+                                <td>카페에서 휴식</td>
+                            </tr>
+                            <tr>
+                                <td class="time-col">17:30~</td>
+                                <td class="location-col">숙소 복귀</td>
+                                <td>저녁 식사 및 자유 시간, 숙소에서 게임</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <!-- Day 3 -->
+            <div class="day-section day3">
+                <div class="day-header">
+                    📅 7월 13일 (일) - 셋째 날
+                </div>
+                <div class="day-content">
+                    <div class="activity">
+                        <div class="activity-title">♨️ 이천 테르메덴 온천</div>
+                        <div class="activity-desc">숙소에서 30-40분 거리, 독일식 온천 테마파크에서 힐링</div>
+                    </div>
+                    
+                    <table class="time-table">
+                        <thead>
+                            <tr>
+                                <th>시간대</th>
+                                <th>장소/활동</th>
+                                <th>설명 및 특징</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="time-col">09:30~10:00</td>
+                                <td class="location-col">숙소 체크아웃, 이천 이동</td>
+                                <td>짐 정리 후 차량 이동</td>
+                            </tr>
+                            <tr>
+                                <td class="time-col">10:30~16:00</td>
+                                <td class="location-col"><span class="highlight">이천 테르메덴</span></td>
+                                <td>독일식 온천 테마파크, 실내·야외 온천, 사우나, 찜질방<br>테르메덴 내 식당에서 점심 해결(한식, 분식, 푸드코트 등)</td>
+                            </tr>
+                            <tr>
+                                <td class="time-col">16:00~</td>
+                                <td class="location-col">귀가</td>
+                                <td>이천 출발, 수도권 기준 저녁 전 집 도착 예상</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <!-- Summary -->
+            <div class="summary-section">
+                <div class="summary-title">📋 전체 일정 요약</div>
+                <div class="summary-item">
+                    <strong>1일차(금):</strong> 숙소 체크인, 장보기, 숙소 내 저녁 및 자유 시간
+                </div>
+                <div class="summary-item">
+                    <strong>2일차(토):</strong> 화담숲 산책·체험 → 점심 → 곤지암 루지 360 → 카페 → 숙소 복귀
+                </div>
+                <div class="summary-item">
+                    <strong>3일차(일):</strong> 숙소 체크아웃 → 이천 테르메덴(온천 및 점심)에서 16시까지 힐링 → 귀가
+                </div>
+            </div>
+            
+            <!-- Tips -->
+            <div class="tips-section">
+                <div class="tips-title">💡 참고 및 팁</div>
+                <div class="tip-item">
+                    🕐 금요일은 점심부터 일정 가능한 사람들은 만나기
+                </div>
+                <div class="tip-item">
+                    🚗 금요일 저녁에 오는 사람은 곤지암역으로 오면 픽업 갈 예정
+                </div>
+                <div class="tip-item">
+                    🩱 테르메덴은 <span class="highlight">수영복</span> 지참 필수(현장 대여·구매 가능)
+                </div>
+                <div class="tip-item">
+                    📝 화담숲, 루지 360은 사전 예약 예정
+                </div>
+                <div class="tip-item">
+                    🚙 각 일정은 차량 이동 기준, 내 차(3인) + 택시 or 렌트카(3인)으로 이동
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
